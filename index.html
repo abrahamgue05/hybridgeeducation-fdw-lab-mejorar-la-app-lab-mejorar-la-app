@@ -1,75 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HybridgeFlix</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HybridgeFlix</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 p-6">
-    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-4">HybridgeFlix</h1>
-        <form id="formularioPelicula" class="mb-6">
-            <div class="mb-4">
-                <label for="titulo" class="block text-gray-700 font-bold mb-2">Título</label>
-                <input type="text" id="titulo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-            </div>
-            <div class="mb-4">
-                <label for="anio" class="block text-gray-700 font-bold mb-2">Año</label>
-                <input type="number" id="anio" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-            </div>
-            <div class="mb-4">
-                <label for="calificacion" class="block text-gray-700 font-bold mb-2">Calificación (1-10)</label>
-                <input type="number" id="calificacion" min="1" max="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-            </div>
-            <div class="mb-4">
-                <label for="resena" class="block text-gray-700 font-bold mb-2">Reseña</label>
-                <textarea id="resena" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Guardar</button>
-        </form>
-        <table class="min-w-full bg-white">
-            <thead>
-                <tr>
-                    <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Título</th>
-                    <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Año</th>
-                    <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Calificación</th>
-                    <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Reseña</th>
-                </tr>
-            </thead>
-            <tbody id="cuerpoTablaPeliculas">
-                <!-- Los registros de las películas se añadirán aquí -->
-            </tbody>
-        </table>
-    </div>
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">HybridgeFlix</h1>
+        <form id="formularioPelicula" class="mb-6">
+            <div class="mb-4">
+                <label for="titulo" class="block text-gray-700 font-bold mb-2">Título</label>
+                <input type="text" id="titulo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
+                <label for="anio" class="block text-gray-700 font-bold mb-2">Año</label>
+                <input type="number" id="anio" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
+                <label for="calificacion" class="block text-gray-700 font-bold mb-2">Calificación (1-10)</label>
+                <input type="number" id="calificacion" min="1" max="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
+                <label for="resena" class="block text-gray-700 font-bold mb-2">Reseña</label>
+                <textarea id="resena" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4" required></textarea>
+            </div>
+                        <div class="mb-4">
+                <label for="urlImagen" class="block text-gray-700 font-bold mb-2">URL del Póster</label>
+                <input type="url" id="urlImagen" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ej: https://ejemplo.com/poster.jpg">
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Guardar</button>
+        </form>
+        
+        <table class="min-w-full bg-white">
+            <thead>
+                <tr>
+                                        <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Póster</th>
+                    <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Título</th>
+                    <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Año</th>
+                    <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Calificación</th>
+                    <th class="py-2 px-4 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">Reseña</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaPeliculas">
+                            </tbody>
+        </table>
+    </div>
 
-    <script>
-        document.getElementById('formularioPelicula').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Obtener valores del formulario
-            const titulo = document.getElementById('titulo').value;
-            const anio = document.getElementById('anio').value;
-            const calificacion = document.getElementById('calificacion').value;
-            const resena = document.getElementById('resena').value;
+    <script>
+        document.getElementById('formularioPelicula').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const titulo = document.getElementById('titulo').value;
+            const anio = document.getElementById('anio').value;
+            const calificacion = document.getElementById('calificacion').value;
+            const resena = document.getElementById('resena').value;
+            // Nuevo valor para la URL de la imagen
+            const urlImagen = document.getElementById('urlImagen').value;
 
-            // Crear una nueva fila en la tabla
-            const nuevaFila = document.createElement('tr');
+            // Determinar el contenido de la celda de la imagen
+            let contenidoImagen = '';
+            if (urlImagen) {
+                // Usamos clases de Tailwind para establecer un ancho de 50px y alto automático
+                contenidoImagen = `<img src="${urlImagen}" alt="Póster de ${titulo}" class="w-12 h-auto object-contain mx-auto">`;
+            } else {
+                contenidoImagen = 'N/A';
+            }
 
-            // Añadir celdas a la fila
-            nuevaFila.innerHTML = `
-                <td class="py-2 px-4 border-b border-gray-300">${titulo}</td>
-                <td class="py-2 px-4 border-b border-gray-300">${anio}</td>
-                <td class="py-2 px-4 border-b border-gray-300">${calificacion}</td>
-                <td class="py-2 px-4 border-b border-gray-300">${resena}</td>
-            `;
+            // Crear una nueva fila en la tabla
+            const nuevaFila = document.createElement('tr');
 
-            // Añadir la nueva fila al cuerpo de la tabla
-            document.getElementById('cuerpoTablaPeliculas').appendChild(nuevaFila);
+            // Añadir celdas a la fila, incluyendo la nueva columna de imagen
+            nuevaFila.innerHTML = `
+                <td class="py-2 px-4 border-b border-gray-300">${contenidoImagen}</td>
+                <td class="py-2 px-4 border-b border-gray-300">${titulo}</td>
+                <td class="py-2 px-4 border-b border-gray-300">${anio}</td>
+                <td class="py-2 px-4 border-b border-gray-300">${calificacion}</td>
+                <td class="py-2 px-4 border-b border-gray-300">${resena}</td>
+            `;
 
-            // Limpiar el formulario
-            document.getElementById('formularioPelicula').reset();
-        });
-    </script>
+            // Añadir la nueva fila al cuerpo de la tabla
+            document.getElementById('cuerpoTablaPeliculas').appendChild(nuevaFila);
+
+            // Limpiar el formulario
+            document.getElementById('formularioPelicula').reset();
+        });
+    </script>
 </body>
 </html>
